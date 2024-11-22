@@ -57,7 +57,7 @@ contract Web3Builders is ERC721A, Ownable {
         // transfer the ownership of NFT
         _transfer(msg.sender, refundAddress, tokenId);
 
-        // This line was moved befor to prevent the reentrance attacks,
+        // This line was moved up to prevent the reentrance attacks,
         // Imagine trying to refund many times at once, if the tokenId was not flagged refunde
         // the attacker might be able to refund multiple times before seting this refund as true.
         // mark refunded
